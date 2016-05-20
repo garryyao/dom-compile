@@ -1,0 +1,21 @@
+{
+  "name": "dom-compile",
+  "version": "0.0.1",
+  "description": "Simple DOM directive interpolation implemented with TreeWalker",
+  "main": "index.html",
+  "scripts": {
+    "serve": "node_modules/.bin/webpack-dev-server --inline --hot",
+    "build": "node_modules/.bin/webpack",
+    "watch": "node_modules/.bin/webpack --watch"
+  },
+  "devDependencies": {
+    "babel-loader": "",
+    "babel-preset-es2015": "",
+    "webpack": "",
+    "webpack-dev-server": ""
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.9.0",
+    "safe-access": "^0.1.0"
+  }
+}

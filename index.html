@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div id="template-dom" class="{{className}}">
+  <div class="user-profile" *if="user">
+    <div class="user-avatar">
+      <img src='{{user.avatar}}'>
+      <div>
+        My name is <strong>{{user.name}}</strong> <span *if="user.friends.length">,
+        I have {{user.friends.length}} friends, they are:
+      </span>
+      </div>
+    </div>
+    <ul class="friends-list" *repeat="#friend of user.friends" style="list-style: none">
+      <li>
+        [{{$index}}] {{friend.name}}
+        <span *if="friend.gender">({{friend.gender}})</span>
+        who is {{friend.age}} years old
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="dist/lib.js"></script>
+<script>
+  var m = {
+    className: "user",
+    user: {
+      name: "wscn",
+      avatar: "https://cdn.tutsplus.com/net/uploads/2013/05/es6.jpg",
+      friends: [
+        {
+          name: 'John',
+          age: 25,
+        },
+        {
+          name: 'Jessie',
+          age: 30,
+        },
+        {
+          name: 'Johanna',
+          age: 28,
+          gender: 'girl'
+        },
+        {
+          name: 'Joy',
+          age: 15,
+          gender: 'girl'
+        },
+        {
+          name: 'Mary',
+          age: 28,
+          gender: 'girl'
+        },
+        {
+          name: 'Peter',
+          age: 95,
+          gender: 'boy'
+        },
+        {
+          name: 'Sebastian',
+          age: 50,
+          gender: 'boy'
+        },
+        {
+          name: 'Erika',
+          age: 27,
+          gender: 'girl'
+        },
+        {
+          name: 'Patrick',
+          age: 40,
+          gender: 'boy'
+        },
+        {
+          name: 'Samantha',
+          age: 60,
+          gender: 'girl'
+        }
+      ]
+    }
+  }
+  render(document.getElementById('template-dom'), m)
+</script>
+</body>
+</html>
